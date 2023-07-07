@@ -1,0 +1,21 @@
+- hosts: all
+  become: true
+  tasks:
+    - name: install vsftpd
+      yum:
+        name: vsftpd
+        state: installed
+      tags:
+        - alpha
+        - never
+
+
+    - name: install httpd
+      yum:
+         name: httpd
+         state: installed
+      tags:
+        - beta
+        - never
+
+

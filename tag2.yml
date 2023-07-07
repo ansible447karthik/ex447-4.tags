@@ -1,0 +1,15 @@
+- hosts: all
+  become: yes
+  become_method: sudo
+  become_user:  root
+  tasks:
+    - name: create file for alpha tag
+      copy:
+        content: "development"
+        dest: /etc/myhosts
+
+    - name: create file for beta tag
+      copy:
+        content: "production"
+        dest: /etc/myhosts
+
